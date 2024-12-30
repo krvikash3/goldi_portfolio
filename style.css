@@ -7,6 +7,9 @@
   box-sizing: border-box;
   background: none;
 }
+a{
+  color: white;
+}
 .icon {
   width: 28px;
   aspect-ratio: 1;
@@ -189,7 +192,8 @@ nav ul li a {
   gap: 10px;
   flex-wrap: wrap;
 }
-.skill {
+.img-btn {
+  cursor: pointer;
   transition: 0.3s ease-in-out;
   display: flex;
   align-items: center;
@@ -215,9 +219,22 @@ nav ul li a {
   align-items: flex-start;
   max-height: 200px;
 }
+
+#project .cards .card .img-btn{
+  background-color: rgba(128, 128, 128, 0.2);
+}
+#project .cards .card .btn{
+  border: none;
+  background-color: #5db9ee;
+  min-width: 100px;
+  text-align: center;
+}
 #project .cards .card p {
   margin-top: 5px;
   margin-bottom: 16px;
+}
+#project .cards .card .img-btn  .icon{
+  width: 22px;
 }
 #project .cards .card .preview {
   flex-shrink: 0;
@@ -233,6 +250,7 @@ nav ul li a {
 #project .cards .card .content {
   padding: 20px;
 }
+
 
 @media screen and (max-width: 800px) {
   #project .cards {
