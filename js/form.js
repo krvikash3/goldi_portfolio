@@ -65,22 +65,22 @@ messageBtn.onclick = async () => {
     messageInput.value = "";
     messageBtn.disabled = true;
 
-    // try {
-    //     const response = await fetch('/.netlify/functions/send-mail', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data),
-    //     });
+    try {
+        const response = await fetch('/.netlify/functions/send-mail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
 
-    //     if (response.ok) {
-    //         alert("Email sent successfully");
-    //     } else {
-    //         alert("Failed to send email");
-    //     }
-    // } catch (error) {
-    //     console.error('Error: ', error);
-    //     alert("Failed to send email");
-    // }
+        if (response.ok) {
+            alert("Email sent successfully");
+        } else {
+            alert("Failed to send email");
+        }
+    } catch (error) {
+        console.error('Error: ', error);
+        alert("Failed to send email");
+    }
 };
