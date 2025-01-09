@@ -1,0 +1,8 @@
+[build]
+  functions = "backend/functions"
+  command = "npm install --prefix backend"
+
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
