@@ -9,9 +9,12 @@ exports.handler = async (event, context) => {
         };
     }
 
+    console.log('EMAIL_USER:', process.env.EMAIL_USER);
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
+    console.log('EMAIL_TO:', process.env.EMAIL_TO);
+
     const { name, email, message } = JSON.parse(event.body);
 
-    
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
@@ -35,10 +38,10 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ message: 'Email sent successfully' }),
         };
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error sending email:', error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: 'Failed to send email' }),
+            body: JSON.stringify({ error: 'Failed to send email' }),
         };
     }
 };
